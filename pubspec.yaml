@@ -42,10 +42,17 @@ dependencies:
   path: ^1.9.1
   json_annotation: ^4.9.0
   archive:
+  msix: ^3.16.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+msix_config:
+  display_name: Desktop
+  publisher_display_name: MananXFolio
+  identity_name: www.mananxfolio.com
+  msix_version: 1.0.0.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
