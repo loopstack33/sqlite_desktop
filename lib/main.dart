@@ -1,17 +1,22 @@
 import 'dart:io';
 
 import 'package:archive/archive_io.dart';
+import 'package:desktop/db_helper_new.dart';
 import 'package:desktop/import_export_screen.dart';
+import 'package:desktop/map_page.dart';
 import 'package:desktop/map_picker_screen.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'database_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DatabaseHelper.instance.init(); // Important for sqlite3
+  // await DatabaseHelper.instance.init();
+  await DbHelper.instance.init();
+  await Geolocator.requestPermission();
   runApp(MyApp());
 }
 
@@ -60,12 +65,17 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Map Screen'),
             ),
-            // const SizedBox(height: 20),
-            // ElevatedButton.icon(
-            //   icon: Icon(Icons.restore),
-            //   label: Text("Restore Backup"),
-            //   onPressed: () => restoreFromZip(context),
-            // ),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              icon: Icon(Icons.restore),
+              label: Text("Flutter Map"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+            ),
             const SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () => backupToZip(context),

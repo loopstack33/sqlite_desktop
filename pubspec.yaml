@@ -36,13 +36,15 @@ dependencies:
   file_picker: ^10.2.0
   path_provider: ^2.1.5
   excel: ^4.0.6
-  flutter_map: ^8.1.1
   sqlite3_flutter_libs: ^0.5.34
   sqlite3: ^2.7.6
   path: ^1.9.1
   json_annotation: ^4.9.0
   archive:
   msix: ^3.16.9
+  flutter_map: ^8.1.1
+  latlong2: ^0.9.1
+  geolocator: ^14.0.1
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +55,7 @@ msix_config:
   publisher_display_name: MananXFolio
   identity_name: www.mananxfolio.com
   msix_version: 1.0.0.0
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

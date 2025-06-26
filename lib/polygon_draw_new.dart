@@ -306,7 +306,7 @@ class MultiPolygonPainter extends CustomPainter {
 
       if (points.length > 2) {
         final path = Path()..addPolygon(points, true);
-        canvas.drawPath(path, Paint()..color = color.withOpacity(0.3));
+        canvas.drawPath(path, Paint()..color = color.withValues(alpha: 0.3));
         canvas.drawPath(path, Paint()
           ..color = color
           ..style = PaintingStyle.stroke
